@@ -292,13 +292,16 @@ static FSEventStreamRef _create_events_stream(SCEvents *watcher, CFArrayRef path
 	callbackInfo.release = NULL;
 	callbackInfo.copyDescription = NULL;
     
+    // Flags include kFSEventStreamEventFlagMount which will trigger events 
+    // for volumes under the watched paths.
     return FSEventStreamCreate(kCFAllocatorDefault, 
 							   &_events_callback,
 							   &callbackInfo, 
 							   paths, 
 							   sinceWhen, 
 							   latency, 
-							   kFSEventStreamCreateFlagUseCFTypes | kFSEventStreamCreateFlagWatchRoot);
+							   kFSEventStreamCreateFlagUseCFTypes | kFSEventStreamCreateFlagWatchRoot
+                               | kFSEventStreamEventFlagMount);
 }
 
 /**

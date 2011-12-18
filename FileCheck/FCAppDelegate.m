@@ -25,21 +25,25 @@
     [[[FileEventsController alloc] init] autorelease];    
     
     // Specify the one path that we'll watch.
-    NSString *filePathToWatch = @"/dl/tumblrJSON.zip";
+    NSString *dmgPathToWatch = @"/Volumes/GrandPerspective 1.3.3";
     self.fileEventsController.filePathsToWatch = 
-    [NSArray arrayWithObject:filePathToWatch];
+    [NSArray arrayWithObject:dmgPathToWatch];
+    NSString *filePathToCheckWhenDMGIsThere = 
+    @"/Volumes/GrandPerspective 1.3.3/GrandPerspective.app/Contents/Info.plist";
     
     // This block runs when the folder contains the file we watch is changed.
     FileExistenceBlock fileExistenceBlock = 
-    ^(NSString *filePath, BOOL exists)
+    ^(NSString *dmgFilePath, BOOL exists)
     {
+        self.statusMessage = @"File's not there.";
         if (exists)
         {
-            self.statusMessage = @"File is there.";
-        }
-        else
-        {
-            self.statusMessage = @"File's not there.";
+            NSFileManager *fileManager = [[NSFileManager alloc] init];
+            if ([fileManager fileExistsAtPath:filePathToCheckWhenDMGIsThere])
+            {
+                self.statusMessage = @"File is there.";
+            }
+            [fileManager release];
         }
         [self updateStatusMenu];
     };
@@ -49,8 +53,8 @@
     
     // Set up initial status.
     NSFileManager *fileManager = [[NSFileManager alloc] init];
-    fileExistenceBlock(filePathToWatch, 
-                       [fileManager fileExistsAtPath:filePathToWatch]);
+    fileExistenceBlock(dmgPathToWatch, 
+                       [fileManager fileExistsAtPath:dmgPathToWatch]);
     [fileManager release];                       
     
     [self.fileEventsController setupEventListener];   
