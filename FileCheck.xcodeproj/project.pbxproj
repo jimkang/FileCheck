@@ -13,6 +13,9 @@
 		A6506B76149E6C940026D403 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A6506B74149E6C940026D403 /* Credits.rtf */; };
 		A6506B79149E6C940026D403 /* FCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6506B78149E6C940026D403 /* FCAppDelegate.m */; };
 		A6506B7C149E6C940026D403 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6506B7A149E6C940026D403 /* MainMenu.xib */; };
+		A6506B89149E73E10026D403 /* SCEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A6506B85149E73E10026D403 /* SCEvent.m */; };
+		A6506B8A149E73E10026D403 /* SCEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = A6506B88149E73E10026D403 /* SCEvents.m */; };
+		A6506B91149E750D0026D403 /* FileEventsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6506B90149E750D0026D403 /* FileEventsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +24,22 @@
 		A6506B68149E6C940026D403 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A6506B69149E6C940026D403 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A6506B6A149E6C940026D403 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A6506B6D149E6C940026D403 /* FileCheck-Info.plist */ = {isa = PBXFileReference; path = "FileCheck-Info.plist"; sourceTree = "<group>"; };
+		A6506B6D149E6C940026D403 /* FileCheck-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FileCheck-Info.plist"; sourceTree = "<group>"; };
 		A6506B6F149E6C940026D403 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A6506B71149E6C940026D403 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A6506B73149E6C940026D403 /* FileCheck-Prefix.pch */ = {isa = PBXFileReference; path = "FileCheck-Prefix.pch"; sourceTree = "<group>"; };
+		A6506B73149E6C940026D403 /* FileCheck-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FileCheck-Prefix.pch"; sourceTree = "<group>"; };
 		A6506B75149E6C940026D403 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		A6506B77149E6C940026D403 /* FCAppDelegate.h */ = {isa = PBXFileReference; path = FCAppDelegate.h; sourceTree = "<group>"; };
+		A6506B77149E6C940026D403 /* FCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCAppDelegate.h; sourceTree = "<group>"; };
 		A6506B78149E6C940026D403 /* FCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCAppDelegate.m; sourceTree = "<group>"; };
 		A6506B7B149E6C940026D403 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A6506B83149E73E10026D403 /* SCConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCConstants.h; sourceTree = "<group>"; };
+		A6506B84149E73E10026D403 /* SCEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEvent.h; sourceTree = "<group>"; };
+		A6506B85149E73E10026D403 /* SCEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEvent.m; sourceTree = "<group>"; };
+		A6506B86149E73E10026D403 /* SCEventListenerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEventListenerProtocol.h; sourceTree = "<group>"; };
+		A6506B87149E73E10026D403 /* SCEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEvents.h; sourceTree = "<group>"; };
+		A6506B88149E73E10026D403 /* SCEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEvents.m; sourceTree = "<group>"; };
+		A6506B8F149E750D0026D403 /* FileEventsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileEventsController.h; sourceTree = SOURCE_ROOT; };
+		A6506B90149E750D0026D403 /* FileEventsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileEventsController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +95,10 @@
 			children = (
 				A6506B77149E6C940026D403 /* FCAppDelegate.h */,
 				A6506B78149E6C940026D403 /* FCAppDelegate.m */,
+				A6506B8F149E750D0026D403 /* FileEventsController.h */,
+				A6506B90149E750D0026D403 /* FileEventsController.m */,
 				A6506B7A149E6C940026D403 /* MainMenu.xib */,
+				A6506B8B149E74000026D403 /* ext */,
 				A6506B6C149E6C940026D403 /* Supporting Files */,
 			);
 			path = FileCheck;
@@ -100,6 +114,29 @@
 				A6506B74149E6C940026D403 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6506B82149E73E10026D403 /* SCEvents */ = {
+			isa = PBXGroup;
+			children = (
+				A6506B83149E73E10026D403 /* SCConstants.h */,
+				A6506B84149E73E10026D403 /* SCEvent.h */,
+				A6506B85149E73E10026D403 /* SCEvent.m */,
+				A6506B86149E73E10026D403 /* SCEventListenerProtocol.h */,
+				A6506B87149E73E10026D403 /* SCEvents.h */,
+				A6506B88149E73E10026D403 /* SCEvents.m */,
+			);
+			name = SCEvents;
+			path = SCEvents/Source;
+			sourceTree = SOURCE_ROOT;
+		};
+		A6506B8B149E74000026D403 /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				A6506B82149E73E10026D403 /* SCEvents */,
+			);
+			name = ext;
+			path = ../SCEvents/Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +204,9 @@
 			files = (
 				A6506B72149E6C940026D403 /* main.m in Sources */,
 				A6506B79149E6C940026D403 /* FCAppDelegate.m in Sources */,
+				A6506B89149E73E10026D403 /* SCEvent.m in Sources */,
+				A6506B8A149E73E10026D403 /* SCEvents.m in Sources */,
+				A6506B91149E750D0026D403 /* FileEventsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
