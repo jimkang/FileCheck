@@ -35,6 +35,7 @@
     FileExistenceBlock fileExistenceBlock = 
     ^(NSString *dmgFilePath, BOOL exists)
     {
+        self.fileLastReportedToExist = NO;
         if (exists)
         {
             NSFileManager *fileManager = [[NSFileManager alloc] init];
