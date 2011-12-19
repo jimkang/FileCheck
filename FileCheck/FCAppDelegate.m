@@ -35,14 +35,11 @@
     FileExistenceBlock fileExistenceBlock = 
     ^(NSString *dmgFilePath, BOOL exists)
     {
-        self.statusMessage = @"File's not there.";
         if (exists)
         {
             NSFileManager *fileManager = [[NSFileManager alloc] init];
-            if ([fileManager fileExistsAtPath:filePathToCheckWhenDMGIsThere])
-            {
-                self.statusMessage = @"File is there.";
-            }
+            self.fileLastReportedToExist =
+            [fileManager fileExistsAtPath:filePathToCheckWhenDMGIsThere];
             [fileManager release];
         }
         [self updateStatusMenu];
@@ -64,7 +61,14 @@
 // to do.
 - (void)updateStatusMenu
 {
-    self.statusItem.title = self.statusMessage;
+    if (self.fileLastReportedToExist)
+    {
+        self.statusItem.image = [NSImage imageNamed:@"fileExists.png"];
+    }
+    else
+    {
+        self.statusItem.image = [NSImage imageNamed:@"fileDoesNotExist.png"];        
+    }
 }
 
 @end
@@ -76,11 +80,12 @@
 @synthesize statusMenu;
 @synthesize statusItem;
 @synthesize fileEventsController;
-@synthesize statusMessage;
+//@synthesize statusMessage;
+@synthesize fileLastReportedToExist;
 
 - (void)dealloc
 {
-    [statusMessage release];
+//    [statusMessage release];
     [fileEventsController release];
     [statusItem release];
     [statusMenu release];
@@ -97,7 +102,7 @@
 {
     [super awakeFromNib];
 
-    self.statusMessage = @"File's not there.";
+    self.fileLastReportedToExist = NO;
     
     self.statusItem = 
     [[NSStatusBar systemStatusBar] 

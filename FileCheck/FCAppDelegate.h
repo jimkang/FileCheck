@@ -15,6 +15,7 @@
 @property (nonatomic, retain) IBOutlet NSMenu *statusMenu;
 @property (nonatomic, retain) NSStatusItem *statusItem;
 @property (nonatomic, retain) FileEventsController *fileEventsController;
-@property (nonatomic, retain) NSString *statusMessage;
+//@property (nonatomic, retain) NSString *statusMessage;
+@property (assign) BOOL fileLastReportedToExist; 
 
 @end

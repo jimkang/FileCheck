@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A643FA9E149ED3D10097435B /* fileDoesNotExist.png in Resources */ = {isa = PBXBuildFile; fileRef = A643FA9C149ED3D10097435B /* fileDoesNotExist.png */; };
+		A643FA9F149ED3D10097435B /* fileExists.png in Resources */ = {isa = PBXBuildFile; fileRef = A643FA9D149ED3D10097435B /* fileExists.png */; };
 		A6506B66149E6C940026D403 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6506B65149E6C940026D403 /* Cocoa.framework */; };
 		A6506B70149E6C940026D403 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6506B6E149E6C940026D403 /* InfoPlist.strings */; };
 		A6506B72149E6C940026D403 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6506B71149E6C940026D403 /* main.m */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A643FA9C149ED3D10097435B /* fileDoesNotExist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fileDoesNotExist.png; sourceTree = "<group>"; };
+		A643FA9D149ED3D10097435B /* fileExists.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fileExists.png; sourceTree = "<group>"; };
 		A6506B61149E6C940026D403 /* FileCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6506B65149E6C940026D403 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A6506B68149E6C940026D403 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -107,6 +111,8 @@
 		A6506B6C149E6C940026D403 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A643FA9C149ED3D10097435B /* fileDoesNotExist.png */,
+				A643FA9D149ED3D10097435B /* fileExists.png */,
 				A6506B6D149E6C940026D403 /* FileCheck-Info.plist */,
 				A6506B6E149E6C940026D403 /* InfoPlist.strings */,
 				A6506B71149E6C940026D403 /* main.m */,
@@ -192,6 +198,8 @@
 				A6506B70149E6C940026D403 /* InfoPlist.strings in Resources */,
 				A6506B76149E6C940026D403 /* Credits.rtf in Resources */,
 				A6506B7C149E6C940026D403 /* MainMenu.xib in Resources */,
+				A643FA9E149ED3D10097435B /* fileDoesNotExist.png in Resources */,
+				A643FA9F149ED3D10097435B /* fileExists.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +334,7 @@
 				A6506B81149E6C940026D403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
